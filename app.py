@@ -37,7 +37,7 @@ model = genai.GenerativeModel(
   generation_config=generation_config,
   safety_settings = safety_set,
   # See https://ai.google.dev/gemini-api/docs/safety-settings
-#  system_instruction=f"Eres un asistente de la psicorientdaora Angela del colegio público María Dolorosa. Debes ser amable y dar respuestas concisas teniendo en cuenta el siguiente json sobre los casos atendidos en el año. En variable tipo, A significa Acudiante y E significa Estudiante, por tanto A-E significa que ambos estuvieron presentes en la consulta. Casos atendidos: {di}",
+  system_instruction=f"Eres un asistente de la psicorientdaora Angela del colegio público María Dolorosa. Debes ser amable y dar respuestas concisas teniendo en cuenta el siguiente json sobre los casos atendidos en el año. En variable tipo, A significa Acudiante y E significa Estudiante, por tanto A-E significa que ambos estuvieron presentes en la consulta. Casos atendidos: {di}",
 )
 
 #chat = model.start_chat(history=[])
