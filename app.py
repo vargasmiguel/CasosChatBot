@@ -21,7 +21,7 @@ generation_config = {
   "temperature": 0,
 #  "top_p": 0.95,
 #  "top_k": 64,
-#  "max_output_tokens": 1024,
+  "max_output_tokens": 8192,
 #  "response_mime_type": "text/plain",
 }
 
@@ -37,10 +37,11 @@ model = genai.GenerativeModel(
   generation_config=generation_config,
   safety_settings = safety_set,
   # See https://ai.google.dev/gemini-api/docs/safety-settings
-  system_instruction=f"Eres un Bot asistente de la psicorientdaora del colegio María Dolorosa. Debes ser amable y dar respuestas concisas teniendo en cuenta el siguiente json sobre los casos atendidos en el año. En variable tipo, A significa Acudiante y E significa Estudiante, por tanto A-E significa que ambos estuvieron presentes en la consulta. Casos atendidos: {di}",
+  system_instruction=f"Te llamas BOTFY, el asistente bot de la psicorientdaora del colegio María Dolorosa, Angela. Debes ser amable y dar respuestas concisas teniendo en cuenta el siguiente json sobre los casos atendidos en el año. En variable tipo, A significa Acudiante y E significa Estudiante, por tanto A-E significa que ambos estuvieron presentes en la consulta. Casos atendidos: {di}",
 )
 
 chat = model.start_chat(history=[])
+
 
 st.title("Asistente ChatBot de Angela")
 
